@@ -10,14 +10,18 @@
 <body>
     <div class="container">
         <h1>Pokedex</h1>
-        <input id="poke" value=""><button onclick="displayMon()" id="submit">Submit</button>
+         <input id="poke" value=""><button onclick="displayMon()" id="submit">Submit</button> 
         <p>
             <span id="imgMon"></span>
             <br>
-            <span id='name'></span>
+            Pokedex Number: <span id='num'></span>
             <br>
-            <span id='type'></span>
+            Pokemon Name: <span id='name'></span>
+            <br>
+            Pokemon Typing: <span id='type'></span>
         </p>
+
+        <button id="reset" onclick="reset()">Reset!</button>
       </div>
 </body>
 <script src="index.js"></script>
