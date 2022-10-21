@@ -2,10 +2,12 @@
 //const limit = '?limit=151'
 const pokeArray = []
 const url = `https://pokeapi.co/api/v2/pokemon/`;
-const input = document.getElementById("poke");
+const limit = `?limit=1154`
+const input = document.getElementById("poke")
+
 
 function displayMon() {
-  pokeArray.push(fetch(url + input.value)
+  pokeArray.push(fetch(url + input.value.toLowerCase())
     .then((res) => res.json()));
     Promise.all(pokeArray).then(results => {
     const pokemon = results.map(data => ({
@@ -18,14 +20,32 @@ console.log(pokemon[0].id);
 document.getElementById('name').textContent = (pokemon[0].name);
 document.getElementById('type').textContent = (pokemon[0].type);
 document.getElementById('num').textContent = (pokemon[0].id);
+  })};
 
-  })}
+const search = document.getElementById('poke');
+const searchMon = async searchText => {
+  const res = await fetch(url + limit);
+  const mons = await res.json()
+
+  //regex
+
+  let matches = mons.results.filter(mon => {
+    const regex =  new RegExp(`^${searchText}`, 'gi');
+    return mon.name.match(regex)
+  });
+
+  if (searchText.length === 0){
+  matches = 0
+  }
+  console.log(matches);
+};
 
 
-
-
-
+  
+poke.addEventListener('input', () => searchMon(poke.value))
 
   function reset(){
     window.location.reload("Refresh")
   }
+
+
