@@ -16,18 +16,16 @@ function displayMon() {
       type: data.types.map (type => type.type.name).join(', '),
       image: data.sprites["front_default"],
     }));
-console.log(pokemon[0].id);
 document.getElementById('name').textContent = (pokemon[0].name);
 document.getElementById('type').textContent = (pokemon[0].type);
 document.getElementById('num').textContent = (pokemon[0].id);
   })};
 
 const search = document.getElementById('poke');
+const matchList = document.getElementById('match-list')
 const searchMon = async searchText => {
   const res = await fetch(url + limit);
   const mons = await res.json()
-
-  //regex
 
   let matches = mons.results.filter(mon => {
     const regex =  new RegExp(`^${searchText}`, 'gi');
@@ -37,9 +35,21 @@ const searchMon = async searchText => {
   if (searchText.length === 0){
   matches = 0
   }
-  console.log(matches);
+  outputHTML(matches);
 };
 
+const outputHTML = matches => {
+  if (matches.length > 0){
+    const html = matches.map( match =>
+      `<div class="results">
+      <ul>${match.name}<ul><span class="pokeSpan" </span></h4>
+      </div>`
+  )
+  .join ('');
+
+  matchList.innerHTML = html.toUpperCase()
+    }
+  };
 
   
 poke.addEventListener('input', () => searchMon(poke.value))

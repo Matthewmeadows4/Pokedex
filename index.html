@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Professor Matthew's Pokedex</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Professor Matthew's Pokedex</h1>
-         <input id="poke" value=""><button onclick="displayMon()">Submit</button> 
-        <p>
-            <span id="imgMon"></span>
-            <br>
-            Pokedex Number: <span id='num'></span>
-            <br>
-            Pokemon Name: <span id='name'></span>
-            <br>
-            Pokemon Typing: <span id='type'></span>
-        </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <button id="reset" onclick="reset()">Press to start over!</button>
-      </div>
-</body>
-<script src="index.js"></script>
+    <title>Professor Matthew's Pokedex</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Professor Matthew's Pokedex</h1>
+      <input id="poke" value=""/><button onclick="displayMon()">Submit</button>
+      <div id="match-list"></div>
+      <p>
+        <span id="imgMon"></span>
+        <br />
+        Pokedex Number: <span id="num"></span>
+        <br />
+        Pokemon Name: <span id="name"></span>
+        <br />
+        Pokemon Typing: <span id="type"></span>
+      </p>
+
+      <button id="reset" onclick="reset()">Press to start over!</button>
+    </div>
+  </body>
+  <script src="index.js"></script>
 </html>
