@@ -1,5 +1,4 @@
-//const api_url = 'https://pokeapi.co/api/v2/pokemon/${i}'
-//const limit = '?limit=151'
+
 const pokeArray = [];
 const url = `https://pokeapi.co/api/v2/pokemon/`;
 const limit = `?limit=1154`;
@@ -20,6 +19,11 @@ function displayMon() {
     document.getElementById("type").textContent = pokemon[0].type;
     document.getElementById("num").textContent = pokemon[0].id;
   });
+  const btn = document.getElementById('btn');
+  const disableButton = function(){
+    btn.disabled =true
+  }
+  btn.addEventListener('click', disableButton)
 }
 
 const search = document.getElementById("poke");
@@ -38,6 +42,18 @@ const searchMon = async (searchText) => {
   loadPoke(matches, pokeListElement);
 
 };
+
+function validate(){
+  pokeInput = document.getElementById('poke').value
+  const pokeRegex = /^[a-zA-z ,]+$/g;
+  if (pokeInput == ""){
+    alert('empty');
+    reset();
+  }else if (!pokeRegex.test(pokeInput)){
+      alert('No Special Charaters please!');
+      reset()
+  }
+}
 
 function loadPoke(mons, element) {
   if (mons) {
@@ -61,7 +77,6 @@ function getEventTarget(e) {
   e = e || window.event;
   return e.target || e.srcElement; 
 }
-
 
 
   const ulDiv = document.getElementById('ulDiv')
