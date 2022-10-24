@@ -37,7 +37,7 @@ const searchMon = async (searchText) => {
     matches = 0;
   }
   loadPoke(matches, pokeListElement);
-  // outputHTML(matches);
+
 };
 
 function loadPoke(mons, element) {
@@ -61,13 +61,16 @@ function getEventTarget(e) {
   return e.target || e.srcElement; 
 }
 
+
 const li = document.getElementById('poke-list');
 li.onclick = function(event) {
   const target = getEventTarget(event);
-  console.log(target.innerHTML);
-};
+  document.getElementById('poke').value= target.textContent
 
+}
 
 function reset() {
   window.location.reload("Refresh");
 }
+
+
