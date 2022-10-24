@@ -29,6 +29,7 @@ button{
 }
 .auto-list > li{
     font-weight: bold;
+    text-align: center;
 }
 
 .auto-list:empty{

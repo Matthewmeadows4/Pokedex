@@ -3,7 +3,11 @@ const pokeArray = [];
 const url = `https://pokeapi.co/api/v2/pokemon/`;
 const limit = `?limit=1154`;
 const input = document.getElementById("poke");
-
+const btn = document.getElementById('btn');
+const disableButton = function(){
+  btn.disabled =true
+}
+btn.addEventListener('click', disableButton)
 function displayMon() {
   pokeArray.push(
     fetch(url + input.value.toLowerCase()).then((res) => res.json())
@@ -15,15 +19,12 @@ function displayMon() {
       type: data.types.map((type) => type.type.name).join(", "),
       image: data.sprites["front_default"],
     }));
+   
     document.getElementById("name").textContent = pokemon[0].name;
     document.getElementById("type").textContent = pokemon[0].type;
     document.getElementById("num").textContent = pokemon[0].id;
   });
-  const btn = document.getElementById('btn');
-  const disableButton = function(){
-    btn.disabled =true
-  }
-  btn.addEventListener('click', disableButton)
+
 }
 
 const search = document.getElementById("poke");
@@ -79,15 +80,7 @@ function getEventTarget(e) {
 }
 
 
-  const ulDiv = document.getElementById('ulDiv')
 
- function hideUl() {
-    if (ulDiv.style.display !== "none") {
-      ulDiv.style.display = "none";
-    } else {
-      ulDiv.style.display = "block";
-    }
-  };
 
 
 
