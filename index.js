@@ -32,7 +32,6 @@ const searchMon = async (searchText) => {
     const regex = new RegExp(`^${searchText}`, "gi");
     return mon.name.match(regex);
   });
-
   if (searchText.length === 0) {
     matches = 0;
   }
@@ -48,6 +47,8 @@ function loadPoke(mons, element) {
       innerElement += `<li><a href = "#">${mons.name}</a></li>`;
     });
     element.innerHTML = innerElement;
+  }else{
+    element.innerHTML = ""
   }
 
 }
@@ -62,11 +63,23 @@ function getEventTarget(e) {
 }
 
 
+
+  const ulDiv = document.getElementById('ulDiv')
+
+ function hideUl() {
+    if (ulDiv.style.display !== "none") {
+      ulDiv.style.display = "none";
+    } else {
+      ulDiv.style.display = "block";
+    }
+  };
+
+
+
 const li = document.getElementById('poke-list');
 li.onclick = function(event) {
   const target = getEventTarget(event);
   document.getElementById('poke').value= target.textContent
-
 }
 
 function reset() {
