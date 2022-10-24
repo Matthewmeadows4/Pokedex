@@ -24,7 +24,7 @@ function displayMon() {
     document.getElementById("type").textContent = pokemon[0].type;
     document.getElementById("num").textContent = pokemon[0].id;
   });
-
+ 
 }
 
 const search = document.getElementById("poke");
@@ -46,9 +46,9 @@ const searchMon = async (searchText) => {
 
 function validate(){
   pokeInput = document.getElementById('poke').value
-  const pokeRegex = /^[a-zA-z ,]+$/g;
+  const pokeRegex = /^[a-zA-z , -]+$/g;
   if (pokeInput == ""){
-    alert('empty');
+    alert('It looks like the input is empyt! Please input Pokemon Name!');
     reset();
   }else if (!pokeRegex.test(pokeInput)){
       alert('No Special Charaters please!');
@@ -79,7 +79,15 @@ function getEventTarget(e) {
   return e.target || e.srcElement; 
 }
 
+const ulDiv = document.getElementById('ulDiv')
 
+ function hideUl() {
+    if (ulDiv.style.display !== "none") {
+      ulDiv.style.display = "none";
+    } else {
+      ulDiv.style.display = "block";
+    }
+  };
 
 
 
