@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="stylesheet" href="style.css">
     <title>Professor Matthew's Pokedex</title>
   </head>
   <body>
     <div class="container">
       <h1>Professor Matthew's Pokedex</h1>
-      <input id="poke" value=""/><button onclick="displayMon()">Submit</button>
-      <div id="match-list"></div>
+      <input type="text" id="poke" value=${li.onclick} placeholder="Search a Pokemon!" /><button onclick="displayMon()">Submit</button>
+        <ul class="auto-list" id="poke-list">
+            <li></li>
+        </ul>
       <p>
         <span id="imgMon"></span>
         <br />
