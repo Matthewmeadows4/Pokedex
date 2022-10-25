@@ -31,7 +31,7 @@ function displayMon() {
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
       pokemon[0].id +
       ".png";
-    img.style.width = "50%"
+    img.style.width = "30%"
     let monImg = document.getElementById("imgMon");
     monImg.appendChild(img);
 
