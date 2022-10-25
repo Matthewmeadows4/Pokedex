@@ -7,6 +7,10 @@ button {
   font-family: "Silkscreen";
 }
 
+h1{
+  font-size: 30px;
+}
+
 .container {
   background-color: yellow;
   display: flex;
@@ -14,6 +18,7 @@ button {
   padding: 10px;
   text-align: center;
   font-family: "Silkscreen";
+  
 }
 .auto-list {
   display: flex;
@@ -25,6 +30,7 @@ button {
   max-height: 100px;
   overflow-y: auto;
   text-align: left;
+  font-size: large;
 }
 .auto-list > li {
   font-weight: bold;
@@ -38,6 +44,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
 
 input {
   font-family: "Silkscreen";
