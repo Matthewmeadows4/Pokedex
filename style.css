@@ -1,45 +1,45 @@
-body{
-    background-color: red;
-    font-family: "Silkscreen";
+body {
+  background-color: red;
+  font-family: "Silkscreen";
 }
 
-
-button{
-    font-family: "Silkscreen";
+button {
+  font-family: "Silkscreen";
 }
 
-.container{
-    background-color: yellow;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
-    font-family: "Silkscreen";
+.container {
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  font-family: "Silkscreen";
 }
-.auto-list{
-    display: flex;
-    flex-direction: column;
-    box-sizing: content-box;
-    list-style-type: none;
-    margin: 0;
-    padding: 10px;
-    max-height: 100px;
-    overflow-y: auto;
-    text-align: left;
+.auto-list {
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  max-height: 100px;
+  overflow-y: auto;
+  text-align: left;
 }
-.auto-list > li{
-    font-weight: bold;
-    text-align: center;
+.auto-list > li {
+  font-weight: bold;
+  text-align: center;
 }
 
-.auto-list:empty{
-    visibility: collapse;
+.auto-list:empty {
+  visibility: collapse;
 }
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
-input{
-    font-family: "Silkscreen";
+input {
+  font-family: "Silkscreen";
 }
+
