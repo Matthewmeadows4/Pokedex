@@ -16,16 +16,17 @@ btn.addEventListener("click", disableButton);
 function displayMon() {
   pokeArray.push(
     fetch(url + input.value.toLowerCase()).then((res) => res.json())
-  );
-  console.log(pokeArray);
-
+    .catch (error => console.log(error) || alert('Hey! Thats not a Pokemon! Try again :)')|| window.location.reload()) )
+    
   Promise.all(pokeArray).then((results) => {
     const pokemon = results.map((data) => ({
       id: data.id,
       name: data.name,
       base: data.base_experience,
       type: data.types.map((type) => type.type.name).join(", "),
-    }));
+    }))
+    
+console.log(pokeArray);
     document.getElementById("name").textContent = pokemon[0].name;
     document.getElementById("type").textContent = pokemon[0].type;
     document.getElementById("num").textContent = pokemon[0].id;
