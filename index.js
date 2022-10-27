@@ -11,20 +11,26 @@ const disableButton = function () {
   btn.disabled = true;
 };
 btn.addEventListener("click", disableButton);
+
+
 function displayMon() {
   pokeArray.push(
     fetch(url + input.value.toLowerCase()).then((res) => res.json())
   );
+  console.log(pokeArray);
 
   Promise.all(pokeArray).then((results) => {
     const pokemon = results.map((data) => ({
       id: data.id,
       name: data.name,
+      base: data.base_experience,
       type: data.types.map((type) => type.type.name).join(", "),
     }));
     document.getElementById("name").textContent = pokemon[0].name;
     document.getElementById("type").textContent = pokemon[0].type;
     document.getElementById("num").textContent = pokemon[0].id;
+    document.getElementById("base").textContent = pokemon[0].base;
+    
 
     let img = document.createElement("img");
     img.src =
@@ -50,7 +56,8 @@ const searchMon = async (searchText) => {
   });
   if (searchText.length === 0) {
     matches = 0;
-  }
+  } 
+  
   loadPoke(matches, pokeListElement);
 };
 
@@ -105,3 +112,4 @@ li.onclick = function (event) {
 function reset() {
   window.location.reload("Refresh");
 }
+

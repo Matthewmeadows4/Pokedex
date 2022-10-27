@@ -10,6 +10,9 @@ button {
 h1{
   font-size: 30px;
 }
+#poke:focus{
+  background-color: lightyellow;
+}
 
 .container {
   background-color: yellow;
