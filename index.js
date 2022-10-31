@@ -63,7 +63,7 @@ const searchMon = async (searchText) => {
 
 function validate() {
   pokeInput = document.getElementById("poke").value;
-  const pokeRegex = /^[a-zA-z , -]+$/g;
+  const pokeRegex = /^[a-zA-z 2 , -]+$/g;
   if (pokeInput == "") {
     alert("It looks like the input is empty! Please input Pokemon Name!");
     reset();
