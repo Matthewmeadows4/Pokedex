@@ -88,10 +88,6 @@ function loadPoke(mons, element) {
 
 poke.addEventListener("input", () => searchMon(poke.value));
 
-function getEventTarget(e) {
-  e = e || window.event;
-  return e.target || e.srcElement;
-}
 
 const ulDiv = document.getElementById("ulDiv");
 
@@ -103,9 +99,13 @@ function hideUl() {
   }
 }
 
+function getEventTarget(e) {e = e 
+  return e.target || e.srcElement;
+}
+
 const li = document.getElementById("poke-list");
-li.onclick = function (event) {
-  const target = getEventTarget(event);
+li.onclick = function (e) {
+  const target = getEventTarget(e);
   document.getElementById("poke").value = target.textContent;
 };
 
