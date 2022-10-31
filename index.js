@@ -66,7 +66,7 @@ function validate() {
   pokeInput = document.getElementById("poke").value;
   const pokeRegex = /^[a-zA-z , -]+$/g;
   if (pokeInput == "") {
-    alert("It looks like the input is empyt! Please input Pokemon Name!");
+    alert("It looks like the input is empty! Please input Pokemon Name!");
     reset();
   } else if (!pokeRegex.test(pokeInput)) {
     alert("No Special Charaters please!");
