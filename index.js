@@ -16,8 +16,7 @@ btn.addEventListener("click", disableButton);
 function displayMon() {
   pokeArray.push(
     fetch(url + input.value.toLowerCase()).then((res) => res.json())
-    .catch (error => console.log(error) || alert('Hey! Thats not a Pokemon! Try again :)')|| window.location.reload()) )
-    
+    .catch (error => console.log(error)))
   Promise.all(pokeArray).then((results) => {
     const pokemon = results.map((data) => ({
       id: data.id,
