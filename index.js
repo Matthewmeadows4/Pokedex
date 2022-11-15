@@ -3,8 +3,7 @@ const url = `https://pokeapi.co/api/v2/pokemon/`;
 const limit = `?limit=1154`;
 const input = document.getElementById("poke");
 const btn = document.getElementById("btn");
-const imgUrl =
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+const imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 const fileType = ".png";
 
 const disableButton = function () {
@@ -24,7 +23,6 @@ function displayMon() {
       base: data.base_experience,
       type: data.types.map((type) => type.type.name).join(", "),
     }))
-    
 console.log(pokeArray);
     document.getElementById("name").textContent = pokemon[0].name;
     document.getElementById("type").textContent = pokemon[0].type;
@@ -48,7 +46,7 @@ const search = document.getElementById("poke");
 const pokeListElement = document.querySelector("#poke-list");
 const searchMon = async (searchText) => {
   const res = await fetch(url + limit);
-  const mons = await res.json();
+  const mons = await res.json();     
 
   let matches = mons.results.filter((mon) => {
     const regex = new RegExp(`^${searchText}`, "gi");
@@ -103,13 +101,15 @@ function getEventTarget(e) {e = e
   return e.target || e.srcElement;
 }
 
+
 const li = document.getElementById("poke-list");
 li.onclick = function (e) {
   const target = getEventTarget(e);
   document.getElementById("poke").value = target.textContent;
 };
 
+
+
 function reset() {
   window.location.reload("Refresh");
 }
-
